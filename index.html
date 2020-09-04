@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css" />
+  <title>Document</title>
+</head>
+
+<body>
+  <form name="myForm" id="form">
+    <label for="name">Name</label>
+    <input id="name" type="text" placeholder="name"><br>
+    <div class="position">
+    <p id="demo" class="red"></p>
+    </div>
+    <label for="age">Age</label>
+    <input id="age" type="number" placeholder="age"><br>
+    <label for="birthdate">Birthdate</label>
+    <input id="birthdate" type="date"><br>
+    <label for="education">Education</label>
+    <select name="education" id="education">
+      <option value="Secondary education">Secondary education</option>
+      <option value="Higher education">Higher education</option>
+      <option value="Primary education">Primary education</option>
+    </select><br>
+    <input type="radio" id="male" name="gender" value="male">
+    <label for="male">Male</label><br>
+    <input type="radio" id="female" name="gender" value="female">
+    <label for="female">Female</label><br>
+    <button id="openModalBtn">Submit</button>
+  </form>
+  <div class="modal-wrapper">
+    <div class="modal">
+      <button id="closeBtn">&times;</button>
+      <div id="mess"></div>
+    </div>
+  </div>
+  <script src="index.js"></script>
+</body>
+
+</html>
