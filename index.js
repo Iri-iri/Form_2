@@ -10,6 +10,17 @@ const modal = document.querySelector(".modal");
 const mess = document.querySelector("#mess");
 let arr = [];
 
+const input = document.querySelector("input");
+
+name.addEventListener("input", () => {
+  if (name !== "") {
+    document.getElementById("demo").innerHTML = "";
+    name.classList.remove("invalid");
+  }
+});
+
+age.addEventListener("keyup", validateAge);
+
 function validateForm() {
   const valid = document.forms["myForm"]["name"].value;
   if (valid === "") {
@@ -20,15 +31,15 @@ function validateForm() {
   return true;
 };
 
-
 openModalBtn.addEventListener("click", function (event) {
+  event.preventDefault();
   if (validateForm()) {
     const nameValue = name.value;
     const ageValue = age.value;
     const birthdateValue = birthdate.value;
     const educationValue = education.value;
     const gender = genderRadion.checked ? "male" : "female";
-    event.preventDefault();
+    
     modalWrapper.style.display = "block";
 
     arr.push(nameValue);
@@ -40,16 +51,22 @@ openModalBtn.addEventListener("click", function (event) {
     arr.forEach((item) => {
       mess.innerHTML += ` ${item}`
     })
-  }
-  else {
-    validateForm();
-  }
+  } validateForm();
 });
 
 closeBtn.addEventListener("click", function () {
   modalWrapper.style.display = "none";
 });
 
+function validateAge() {
+  const validAge = document.forms["myForm"]["age"].value;
+  if (!parseInt(validAge)) {
+    age.className = "invalid";
+    return false;
+  }
+  age.className = "valid";
+  return true;
+}
 
 
 

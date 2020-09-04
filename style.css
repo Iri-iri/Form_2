@@ -48,6 +48,10 @@ input, select {
   color: red;
 }
 
+.valid {
+  color: green;
+}
+
 .position {
   position: relative;
 }
